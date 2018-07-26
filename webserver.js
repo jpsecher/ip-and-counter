@@ -27,7 +27,7 @@ if (process.argv.length > 2) {
 }
 
 function generatePage() {
-  return `Host: ${host}\r\nContainer IP: ${ip}\r\nVisits: ${counter}`;
+  return `Host: ${host}\r\nContainer IP: ${ip}\r\nVisits: ${counter}\r\n`;
 }
 
 const server = http.createServer((req, res) => {
