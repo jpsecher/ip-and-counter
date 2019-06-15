@@ -1,12 +1,15 @@
 # Web server that returns IP and request count
 
-This minimal web server can be used for testing load balancers.
+This minimal web server can be used for testing load balancers and reverse proxies.
 
 It returns a text response with the IP of the webserver and the number of requests it has received, like
 
-    Host: docker-host-1
+    Server: worker-1
     IP: 172.17.0.2
     Visits: 6
+
+    Host: counter.mycompany.com
+    X-Forwarded-For: 34.230.12.56
 
 Run it by
 
