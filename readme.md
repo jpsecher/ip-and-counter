@@ -19,6 +19,8 @@ Stop it by
 
     docker kill ip-and-counter
 
+It has a non-counting health endpoint at `/health`.
+
 ----
 
 [![Docker build status](https://img.shields.io/docker/build/jpsecher/ip-and-counter.svg)](https://hub.docker.com/r/jpsecher/ip-and-counter/builds/)
