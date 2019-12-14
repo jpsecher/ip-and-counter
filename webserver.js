@@ -46,7 +46,7 @@ function generatePage (req) {
 
 const webserver = http.createServer((req, res) => {
   if (req.url === '/health') {
-    res.end()
+    return res.end("I'm not dead yet")
   }
   if (req.url !== '/favicon.ico') {
     ++counter
