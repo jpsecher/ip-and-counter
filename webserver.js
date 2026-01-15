@@ -4,7 +4,6 @@ const http = require('http')
 const os = require('os')
 
 let counter = 0
-let ip = '127.0.0.1'
 let server = 'docker'
 
 let candidates = []
@@ -18,9 +17,6 @@ Object.keys(ifaces).forEach(ifname => {
     candidates.push(iface.address)
   })
 })
-if (candidates.length > 0) {
-  ip = candidates[0]
-}
 
 if (process.argv.length > 2) {
   server = process.argv[2]
@@ -28,8 +24,8 @@ if (process.argv.length > 2) {
 
 function generatePage (req) {
   let lines = []
-  lines.push(`server: ${server}`)
-  lines.push(`Container IP: ${ip}`)
+  lines.push(`Server: ${server}`)
+  lines.push(`Container IPs: ${candidates}`)
   lines.push(`Visits: ${counter}`)
   lines.push('')
   const host = req.headers['host']
